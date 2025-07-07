@@ -1,0 +1,108 @@
+USE retail_store;
+
+-- CATEGORY
+
+CREATE TABLE IF NOT EXISTS Categories (
+    CategoryID INT PRIMARY KEY,
+    CategoryName VARCHAR(100),
+    Description VARCHAR(250),
+    ParentCategoryID INT,
+    FOREIGN KEY (ParentCategoryID) REFERENCES Categories (CategoryID)
+);
+
+-- SUPPLIER
+
+  CREATE  TABLE IF NOT EXISTS Suppliers (
+SupplierID INT PRIMARY KEY,
+SupplierName VARCHAR(100) ,
+CompanyRegistrationNumber VARCHAR(10) ,
+BankAccountDetails VARCHAR(250) ,
+Rating INT,
+ProductsSupplied VARCHAR(100),
+ContactPerson  VARCHAR(100),
+PhoneNumber  VARCHAR(20),
+Email VARCHAR(100),
+Status VARCHAR(20)
+);
+ 
+ -- PRODUCTS
+
+CREATE TABLE IF NOT EXISTS Products (
+ProductID INT  PRIMARY KEY ,
+ProductName VARCHAR(100),
+CategoryID INT ,
+SupplierID INT,
+Price DECIMAL(10,2) , -- LIKE 12764384.00
+FOREIGN KEY (CategoryID) REFERENCES Categories(CategoryID),
+FOREIGN KEY (SupplierID) REFERENCES Suppliers(SupplierID)
+);
+
+-- CUSTOMERS
+
+CREATE TABLE IF NOT EXISTS Customers (
+    CustomerID INT PRIMARY KEY,
+    FirstName VARCHAR(100),
+    LastName VARCHAR(100),
+    Email VARCHAR(150),
+    PhoneNumber VARCHAR(20) -- supports +880 2863746991 
+);
+
+-- ORDERS
+CREATE TABLE IF NOT EXISTS Orders (
+    OrderID INT PRIMARY KEY,
+    CustomerID INT,
+    OrderDate DATE,
+    TotalAmount DECIMAL(10,2),
+    Status VARCHAR(20),
+    PaymentMethod VARCHAR(20),
+    DeliveryDate DATE,
+    FOREIGN KEY (CustomerID) REFERENCES Customers(CustomerID)
+);
+
+-- ORDER ITEMS
+
+CREATE TABLE IF NOT EXISTS Order_Items (
+    OrderItemID INT PRIMARY KEY,
+    OrderID INT,
+    ProductID INT,
+    Quantity INT,
+    Price DECIMAL(10,2),
+    Discount DECIMAL(5,2), -- 20.00=20%
+    SubTotal DECIMAL(10,2),
+    FOREIGN KEY (OrderID) REFERENCES Orders(OrderID),
+    FOREIGN KEY (ProductID) REFERENCES Products(ProductID)
+);
+
+-- EMPLOYEES
+
+CREATE TABLE IF NOT EXISTS Employees (
+    EmployeeID INT PRIMARY KEY,
+    EmployeeName VARCHAR(100),
+    DateOfBirth DATE,
+    Gender VARCHAR(10),
+    Salary DECIMAL(10,2),
+    Department VARCHAR(100),
+    SupervisorID INT,
+    Email VARCHAR(150),
+    PhoneNumber VARCHAR(20),
+    Status VARCHAR(20),
+    FOREIGN KEY (SupervisorID) REFERENCES Employees(EmployeeID)
+);
+
+-- RETURNS
+
+CREATE TABLE IF NOT EXISTS Returns (
+    ReturnID INT PRIMARY KEY,
+    OrderItemID INT,
+    ReturnDate DATE,
+    ApprovedBy INT,
+    ReturnCondition VARCHAR(20),
+    ReturnLocation VARCHAR(50),
+    ReplacementRequested VARCHAR(3),
+    FinalResolutionDate DATE,
+    Reason VARCHAR(255),
+    Status VARCHAR(20),
+    FOREIGN KEY (OrderItemID) REFERENCES Order_Items(OrderItemID),
+    FOREIGN KEY (ApprovedBy) REFERENCES Employees(EmployeeID)
+);
+

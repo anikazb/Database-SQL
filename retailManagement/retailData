@@ -1,0 +1,143 @@
+-- Insert data into Categories
+INSERT INTO Categories (CategoryID, CategoryName, Description, ParentCategoryID) VALUES
+(1, 'Electronics', 'Electronic devices and gadgets', NULL),
+(2, 'Clothing', 'Men and women apparel', NULL),
+(3, 'Home Appliances', 'Household electronic appliances', NULL),
+(4, 'Smartphones', 'Mobile phones and accessories', 1),
+(5, 'Laptops', 'Portable computers', 1),
+(6, 'Men''s Clothing', 'Clothing for men', 2),
+(7, 'Women''s Clothing', 'Clothing for women', 2),
+(8, 'Kitchen Appliances', 'Appliances for kitchen use', 3),
+(9, 'Televisions', 'TVs and home entertainment', 1),
+(10, 'Footwear', 'Shoes and sandals', 2),
+(11, 'Accessories', 'Jewelry and fashion accessories', 2),
+(12, 'Refrigerators', 'Cooling appliances', 3),
+(13, 'Washing Machines', 'Laundry appliances', 3),
+(14, 'Tablets', 'Portable computing devices', 1),
+(15, 'Audio', 'Speakers and headphones', 1);
+
+-- Insert data into Suppliers
+INSERT INTO Suppliers (SupplierID, SupplierName, CompanyRegistrationNumber, BankAccountDetails, Rating, ProductsSupplied, ContactPerson, PhoneNumber, Email, Status) VALUES
+(1, 'TechGlobal Inc.', 'TG123456', 'ACC123456789', 4, 'Electronics', 'John Smith', '5550102030', 'john@techglobal.com', 'Active'),
+(2, 'FashionHub Ltd.', 'FH654321', 'ACC987654321', 5, 'Clothing', 'Sarah Johnson', '5550203040', 'sarah@fashionhub.com', 'Active'),
+(3, 'HomeEssentials Co.', 'HE789012', 'ACC456123789', 3, 'Home Appliances', 'Mike Brown', '5550304050', 'mike@homeessentials.com', 'Active'),
+(4, 'MobileWorld', 'MW345678', 'ACC789456123', 4, 'Smartphones', 'David Lee', '5550405060', 'david@mobileworld.com', 'Active'),
+(5, 'CompuTech', 'CT901234', 'ACC321654987', 5, 'Laptops', 'Lisa Wong', '5550506070', 'lisa@computeck.com', 'Active'),
+(6, 'MensFashion', 'MF567890', 'ACC654987321', 4, 'Men''s Clothing', 'Robert Taylor', '5550607080', 'robert@mensfashion.com', 'Active'),
+(7, 'LadiesStyle', 'LS234567', 'ACC987321654', 4, 'Women''s Clothing', 'Emily Davis', '5550708090', 'emily@ladiesstyle.com', 'Active'),
+(8, 'KitchenPro', 'KP890123', 'ACC147258369', 3, 'Kitchen Appliances', 'James Wilson', '5550809010', 'james@kitchenpro.com', 'Active'),
+(9, 'TVMasters', 'TV456789', 'ACC258369147', 5, 'Televisions', 'Jennifer Lopez', '5550901020', 'jennifer@tvmasters.com', 'Active'),
+(10, 'ShoeLand', 'SL012345', 'ACC369147258', 4, 'Footwear', 'Thomas Clark', '5551011121', 'thomas@shoeland.com', 'Active'),
+(11, 'AccessoryWorld', 'AW678901', 'ACC741852963', 3, 'Accessories', 'Jessica Adams', '5551112131', 'jessica@accessoryworld.com', 'Active'),
+(12, 'CoolTech', 'CT234567', 'ACC852963741', 4, 'Refrigerators', 'Daniel White', '5551213141', 'daniel@cooltech.com', 'Active'),
+(13, 'CleanWash', 'CW890123', 'ACC963741852', 3, 'Washing Machines', 'Amanda Green', '5551314151', 'amanda@cleanwash.com', 'Active'),
+(14, 'TabStore', 'TS456789', 'ACC159357486', 5, 'Tablets', 'Christopher King', '5551415161', 'christopher@tabstore.com', 'Active'),
+(15, 'SoundSystems', 'SS012345', 'ACC357159486', 4, 'Audio', 'Nicole Scott', '5551516171', 'nicole@soundsystems.com', 'Active');
+
+-- Insert data into Products
+INSERT INTO Products (ProductID, ProductName, CategoryID, SupplierID, Price) VALUES
+(1, 'iPhone 15 Pro', 4, 4, 999.99),
+(2, 'Samsung Galaxy S23', 4, 4, 799.99),
+(3, 'MacBook Pro 14"', 5, 5, 1999.99),
+(4, 'Dell XPS 15', 5, 5, 1499.99),
+(5, 'Men''s Dress Shirt', 6, 6, 49.99),
+(6, 'Women''s Summer Dress', 7, 7, 59.99),
+(7, 'Blender Pro', 8, 8, 79.99),
+(8, 'Samsung 65" QLED TV', 9, 9, 1299.99),
+(9, 'Running Shoes', 10, 10, 89.99),
+(10, 'Silver Necklace', 11, 11, 129.99),
+(11, 'French Door Refrigerator', 12, 12, 1999.99),
+(12, 'Front Load Washer', 13, 13, 899.99),
+(13, 'iPad Pro', 14, 14, 1099.99),
+(14, 'Wireless Headphones', 15, 15, 199.99),
+(15, 'Smart Watch', 4, 4, 299.99);
+
+-- Insert data into Customers
+INSERT INTO Customers (CustomerID, FirstName, LastName, Email, PhoneNumber) VALUES
+(1, 'Michael', 'Johnson', 'michael.johnson@email.com', '5551234567'),
+(2, 'Sarah', 'Williams', 'sarah.williams@email.com', '5552345678'),
+(3, 'David', 'Brown', 'david.brown@email.com', '5553456789'),
+(4, 'Jennifer', 'Davis', 'jennifer.davis@email.com', '5554567890'),
+(5, 'Robert', 'Miller', 'robert.miller@email.com', '5555678901'),
+(6, 'Lisa', 'Wilson', 'lisa.wilson@email.com', '5556789012'),
+(7, 'Thomas', 'Moore', 'thomas.moore@email.com', '5557890123'),
+(8, 'Emily', 'Taylor', 'emily.taylor@email.com', '5558901234'),
+(9, 'Daniel', 'Anderson', 'daniel.anderson@email.com', '5559012345'),
+(10, 'Jessica', 'Thomas', 'jessica.thomas@email.com', '5550123456'),
+(11, 'Christopher', 'Jackson', 'christopher.jackson@email.com', '5551122334'),
+(12, 'Amanda', 'White', 'amanda.white@email.com', '5552233445'),
+(13, 'Matthew', 'Harris', 'matthew.harris@email.com', '5553344556'),
+(14, 'Ashley', 'Martin', 'ashley.martin@email.com', '5554455667'),
+(15, 'Joshua', 'Thompson', 'joshua.thompson@email.com', '5555566778');
+
+-- Insert data into Employees
+INSERT INTO Employees (EmployeeID, EmployeeName, DateOfBirth, Gender, Salary, Department, SupervisorID, Email, PhoneNumber, Status) VALUES
+(1, 'John Smith', '1980-05-15', 'Male', 65000.00, 'Management', NULL, 'john.smith@company.com', '5556677889', 'Active'),
+(2, 'Sarah Johnson', '1985-08-22', 'Female', 58000.00, 'Sales', 1, 'sarah.johnson@company.com', '5557788990', 'Active'),
+(3, 'Michael Brown', '1990-03-10', 'Male', 52000.00, 'Sales', 1, 'michael.brown@company.com', '5558899001', 'Active'),
+(4, 'Emily Davis', '1988-11-05', 'Female', 55000.00, 'Customer Service', 1, 'emily.davis@company.com', '5559900112', 'Active'),
+(5, 'David Wilson', '1992-07-18', 'Male', 48000.00, 'Warehouse', 1, 'david.wilson@company.com', '5550011223', 'Active'),
+(6, 'Jessica Taylor', '1987-09-30', 'Female', 53000.00, 'Marketing', 1, 'jessica.taylor@company.com', '5551122334', 'Active'),
+(7, 'Robert Anderson', '1991-04-25', 'Male', 50000.00, 'IT', 1, 'robert.anderson@company.com', '5552233445', 'Active'),
+(8, 'Jennifer Thomas', '1989-12-12', 'Female', 56000.00, 'HR', 1, 'jennifer.thomas@company.com', '5553344556', 'Active'),
+(9, 'Daniel Jackson', '1993-02-28', 'Male', 47000.00, 'Warehouse', 5, 'daniel.jackson@company.com', '5554455667', 'Active'),
+(10, 'Amanda White', '1986-06-08', 'Female', 54000.00, 'Finance', 1, 'amanda.white@company.com', '5555566778', 'Active'),
+(11, 'Christopher Harris', '1994-01-15', 'Male', 45000.00, 'Customer Service', 4, 'christopher.harris@company.com', '5556677889', 'Active'),
+(12, 'Nicole Martin', '1984-10-20', 'Female', 60000.00, 'Marketing', 6, 'nicole.martin@company.com', '5557788990', 'Active'),
+(13, 'Kevin Thompson', '1995-07-03', 'Male', 43000.00, 'IT', 7, 'kevin.thompson@company.com', '5558899001', 'Active'),
+(14, 'Rachel Garcia', '1983-09-17', 'Female', 62000.00, 'Finance', 10, 'rachel.garcia@company.com', '5559900112', 'Active'),
+(15, 'Jason Martinez', '1996-05-22', 'Male', 42000.00, 'Warehouse', 5, 'jason.martinez@company.com', '5550011223', 'Active');
+
+-- Insert data into Orders
+INSERT INTO Orders (OrderID, CustomerID, OrderDate, TotalAmount, Status, PaymentMethod, DeliveryDate) VALUES
+(1, 1, '2023-10-01', 999.99, 'Delivered', 'Credit Card', '2023-10-03'),
+(2, 2, '2023-10-02', 1499.99, 'Shipped', 'PayPal', '2023-10-05'),
+(3, 3, '2023-10-02', 1999.99, 'Processing', 'Credit Card', '2023-10-06'),
+(4, 4, '2023-10-03', 59.99, 'Delivered', 'Debit Card', '2023-10-04'),
+(5, 5, '2023-10-04', 1299.99, 'Shipped', 'Credit Card', '2023-10-07'),
+(6, 6, '2023-10-05', 89.99, 'Delivered', 'PayPal', '2023-10-06'),
+(7, 7, '2023-10-06', 129.99, 'Processing', 'Debit Card', '2023-10-09'),
+(8, 8, '2023-10-07', 1999.99, 'Shipped', 'Credit Card', '2023-10-10'),
+(9, 9, '2023-10-08', 899.99, 'Delivered', 'PayPal', '2023-10-09'),
+(10, 10, '2023-10-09', 1099.99, 'Processing', 'Credit Card', '2023-10-12'),
+(11, 11, '2023-10-10', 199.99, 'Shipped', 'Debit Card', '2023-10-13'),
+(12, 12, '2023-10-11', 299.99, 'Delivered', 'Credit Card', '2023-10-12'),
+(13, 13, '2023-10-12', 799.99, 'Processing', 'PayPal', '2023-10-15'),
+(14, 14, '2023-10-13', 49.99, 'Shipped', 'Debit Card', '2023-10-16'),
+(15, 15, '2023-10-14', 79.99, 'Processing', 'Credit Card', '2023-10-17');
+
+-- Insert data into Order_Items
+INSERT INTO Order_Items (OrderItemID, OrderID, ProductID, Quantity, Price, Discount, SubTotal) VALUES
+(1, 1, 1, 1, 999.99, 0.00, 999.99),
+(2, 2, 4, 1, 1499.99, 0.00, 1499.99),
+(3, 3, 3, 1, 1999.99, 0.00, 1999.99),
+(4, 4, 6, 1, 59.99, 0.00, 59.99),
+(5, 5, 8, 1, 1299.99, 0.00, 1299.99),
+(6, 6, 9, 1, 89.99, 0.00, 89.99),
+(7, 7, 10, 1, 129.99, 0.00, 129.99),
+(8, 8, 11, 1, 1999.99, 0.00, 1999.99),
+(9, 9, 12, 1, 899.99, 0.00, 899.99),
+(10, 10, 13, 1, 1099.99, 0.00, 1099.99),
+(11, 11, 14, 1, 199.99, 0.00, 199.99),
+(12, 12, 15, 1, 299.99, 0.00, 299.99),
+(13, 13, 2, 1, 799.99, 0.00, 799.99),
+(14, 14, 5, 1, 49.99, 0.00, 49.99),
+(15, 15, 7, 1, 79.99, 0.00, 79.99);
+
+-- Insert data into Returns
+INSERT INTO Returns (ReturnID, OrderItemID, ReturnDate, ApprovedBy, ReturnCondition, ReturnLocation, ReplacementRequested, FinalResolutionDate, Reason, Status) VALUES
+(1, 1, '2023-10-04', 2, 'New', 'Store', 'Yes', '2023-10-06', 'Wrong color', 'Completed'),
+(2, 3, '2023-10-07', 3, 'Used', 'Warehouse', 'No', '2023-10-09', 'Changed mind', 'Completed'),
+(3, 5, '2023-10-08', 2, 'Damaged', 'Store', 'Yes', '2023-10-10', 'Screen cracked', 'Completed'),
+(4, 7, '2023-10-10', 4, 'New', 'Warehouse', 'No', '2023-10-12', 'Too small', 'Completed'),
+(5, 9, '2023-10-10', 3, 'Used', 'Store', 'Yes', '2023-10-12', 'Not working', 'Completed'),
+(6, 11, '2023-10-14', 2, 'New', 'Warehouse', 'No', '2023-10-16', 'Poor quality', 'Completed'),
+(7, 13, '2023-10-16', 4, 'Damaged', 'Store', 'Yes', '2023-10-18', 'Scratched', 'Processing'),
+(8, 15, '2023-10-18', 3, 'New', 'Warehouse', 'No', NULL, 'Changed mind', 'Pending'),
+(9, 2, '2023-10-06', 2, 'Used', 'Store', 'Yes', '2023-10-08', 'Too slow', 'Completed'),
+(10, 4, '2023-10-05', 4, 'New', 'Warehouse', 'No', '2023-10-07', 'Wrong size', 'Completed'),
+(11, 6, '2023-10-07', 3, 'Used', 'Store', 'Yes', '2023-10-09', 'Uncomfortable', 'Completed'),
+(12, 8, '2023-10-11', 2, 'Damaged', 'Warehouse', 'No', '2023-10-13', 'Dented', 'Completed'),
+(13, 10, '2023-10-13', 4, 'New', 'Store', 'Yes', '2023-10-15', 'Changed mind', 'Completed'),
+(14, 12, '2023-10-13', 3, 'Used', 'Warehouse', 'No', '2023-10-15', 'Battery issues', 'Completed'),
+(15, 14, '2023-10-17', 2, 'New', 'Store', 'Yes', NULL, 'Wrong style', 'Processing');
