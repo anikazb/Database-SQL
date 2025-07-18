@@ -25,3 +25,17 @@ salary DECIMAL(10,2),
 city VARCHAR(20),
 officeHour VARCHAR(50)
 );
+
+
+CREATE TABLE IF NOT EXISTS rules_regulations(
+rules_id INT PRIMARY KEY,
+student_rules TEXT(1000),
+instructor_rules TEXT(1000),
+employee_rules TEXT(1000),
+StudentID INT,
+instructorID INT,
+employeeID INT,
+FOREIGN KEY(StudentID) REFERENCES Students(StudentID),
+FOREIGN KEY(instructorID) REFERENCES instructors(instructorID),
+FOREIGN KEY(employeeID) REFERENCES college_employee(employeeID)
+);
