@@ -8,5 +8,8 @@ SELECT * FROM instructors WHERE Phone='01677889900' ;
 SELECT * FROM instructors WHERE instructorID BETWEEN 1 AND 5 ;
 SELECT * FROM instructors WHERE instructorID BETWEEN 2 AND 4 ;
 
+-- DESCRIBE
+DESCRIBE instructors; -- show the structure of your table not the data of a table.
+
 
 

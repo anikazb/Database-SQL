@@ -39,3 +39,12 @@ FOREIGN KEY(StudentID) REFERENCES Students(StudentID),
 FOREIGN KEY(instructorID) REFERENCES instructors(instructorID),
 FOREIGN KEY(employeeID) REFERENCES college_employee(employeeID)
 );
+
+
+CREATE TABLE IF NOT EXISTS exam(
+reg_num INT PRIMARY KEY,
+StudentID INT ,
+e_Name VARCHAR(100)
+);
+
+
