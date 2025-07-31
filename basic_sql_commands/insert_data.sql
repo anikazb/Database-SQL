@@ -22,3 +22,36 @@ VALUES
 (106, 'Maliha Hossain', 73000.00, 'Senior Lecturer', 'Dhaka', 'Sun–Thu 11AM–4PM'),
 (107, 'Shahriar Hasan', 90000.00, 'Professor', 'Khulna', 'Sun–Wed 8AM–12PM'),
 (108, 'Fariha Binte Noor', 60000.00, 'Assistant Professor', 'Comilla', 'Sun–Thu 9AM–2PM');
+
+
+
+INSERT INTO rules_regulations (
+  rules_id, student_rules, instructor_rules, employee_rules, StudentID, instructorID, employeeID
+)
+VALUES (
+  01,
+  'Students must attend at least 75% of classes and submit assignments on time.',
+  'Instructors must maintain course material and submit grades promptly.',
+  'Employees must wear ID cards and follow campus timings.',
+1,2,103 ),
+(
+  02,
+  'Mobile phones are not allowed during examinations.',
+  'Instructors must not reschedule classes without prior notice.',
+  'Employees are required to maintain cleanliness in their areas.',
+  2,5,106),
+  (
+  3,
+  'Students should carry their ID cards at all times.',
+  'Instructors must take attendance every session.',
+  'Employees should log attendance using the biometric system.',
+  3,3,108);
+  
+  
+
+
+INSERT INTO exam(reg_num,StudentID,e_Name)
+VALUES
+(1907,56,'Midterm'),
+(7682,53,'Final'),
+(3444,12,'Semi-Final');

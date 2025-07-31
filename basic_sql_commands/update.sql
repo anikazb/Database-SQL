@@ -47,3 +47,25 @@ SELECT * FROM Students;
 
 
 
+-- update using case
+
+CREATE TABLE IF NOT EXISTS exam(
+reg_num INT PRIMARY KEY,
+StudentID INT ,
+e_Name VARCHAR(100)
+);
+INSERT INTO exam(reg_num,StudentID,e_Name)
+VALUES
+(1907,56,'Midterm'),
+(7682,53,'Final'),
+(3444,12,'Semi-Final');
+
+UPDATE exam
+SET StudentID = CASE reg_num
+      WHEN 1907 THEN 2
+      WHEN 7682 THEN 1
+      WHEN 3444 THEN 3
+      ELSE StudentID
+END;
+
+
