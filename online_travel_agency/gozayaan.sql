@@ -1,3 +1,63 @@
+--  create table
+
+CREATE DATABASE Gozayaan;
+USE Gozayaan;
+
+CREATE TABLE IF NOT EXISTS Customer (
+C_ID INT PRIMARY KEY,
+Name VARCHAR(100),
+Email Varchar(150) UNIQUE KEY,
+Phone Varchar(20)
+);
+
+CREATE TABLE IF NOT EXISTS Vendors (
+V_ID INT PRIMARY KEY,
+Vendor_name VARCHAR(200),
+Type VARCHAR(250),
+Contact VARCHAR(20)
+);
+
+CREATE TABLE IF NOT EXISTS Promotion (
+P_ID INT PRIMARY KEY,
+Promo_status VARCHAR(200),
+Discount VARCHAR(10),
+Start_date DATE,
+End_date DATE
+);
+
+CREATE TABLE IF NOT EXISTS Booking (
+B_ID INT PRIMARY KEY,          
+C_ID INT,                   
+V_ID INT,                      
+P_ID INT,                      
+Booking_date DATE,             
+Status VARCHAR(50), 
+FOREIGN KEY (C_ID) REFERENCES Customer(C_ID),
+FOREIGN KEY (V_ID) REFERENCES Vendors(V_ID),
+FOREIGN KEY (P_ID) REFERENCES Promotion(P_ID)   
+);
+
+CREATE TABLE IF NOT EXISTS Review (
+R_ID INT PRIMARY KEY,
+C_ID INT,
+B_ID INT,
+Rating INT,
+FOREIGN KEY (C_ID) REFERENCES Customer(C_ID),
+FOREIGN KEY (B_ID) REFERENCES Booking(B_ID)
+);
+ 
+ CREATE TABLE IF NOT EXISTS Payment (
+Pay_ID INT PRIMARY KEY,
+B_ID INT,
+Payment_date DATE,
+Amount DECIMAL(10, 2),
+Pay_status VARCHAR(50),
+Payment_method VARCHAR(50),
+FOREIGN KEY (B_ID) REFERENCES Booking(B_ID)
+);
+
+-- insert data
+
 -- customer
 INSERT INTO Customer (C_ID, Name, Email, Phone)
  VALUES
