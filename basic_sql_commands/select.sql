@@ -21,5 +21,13 @@ SELECT Name,StartTime FROM instructors  ORDER BY Name,StartTime ; -- ascending o
 SELECT Name FROM Students  ORDER BY Name DESC  ; -- decending order
 SELECT CGPA FROM Students  ORDER BY CGPA DESC  ; -- decending order
 
+
+SELECT Name,CGPA
+FROM Students
+ORDER BY Name ASC,CGPA DESC; -- Multiple ordering
+-- sorting will happen with first order which is name asc
+
+
+
 SELECT CGPA FROM Students  ORDER BY CGPA   ; -- ASCENDING
 
